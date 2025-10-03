@@ -1,13 +1,14 @@
 "use client";
 import clearCart from "@/Api/cartAction/clearAllCart.api";
 import { getloggedUserCart } from "@/Api/cartAction/getLoggedUserCart.api";
-import RemoveItem from "@/Api/wishListAction/removeItem.api";
+
 import UpdateCart from "@/Api/cartAction/updateCart.api";
 import { cartItemContext } from "@/app/context/cartItemContext";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { id } from "zod/v4/locales";
 import Link from 'next/link';
+import RemoveCart from "@/Api/cartAction/removeCart.api";
 
 
 export default function Cart() {
@@ -30,7 +31,7 @@ export default function Cart() {
     }
     async function removeProduct(id: string) {
         try {
-            let res = await RemoveItem(id)
+            let res = await RemoveCart(id)
             toast.success('product deleted successfully ..', {
                 position: "top-center",
                 duration: 2000
