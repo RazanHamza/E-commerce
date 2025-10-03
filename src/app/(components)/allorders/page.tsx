@@ -64,6 +64,8 @@ export default function OrdersPage() {
   }, [session, status]);
 
   if (loading) return <p className="text-center my-10">Loading orders...</p>;
+  if (!orders.length) return <p className="text-center my-10">No orders found.</p>;
+
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">My Orders</h1>
