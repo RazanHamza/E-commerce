@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 export default async function getMyToken() {
   try {
     let decodeToken =
-      (await cookies()).get("_Secure-next-auth.session-token")?.value ||
+      (await cookies()).get("__Secure-next-auth.session-token")?.value ||
       (await cookies()).get("next-auth.session-token")?.value;
 
     if (!decodeToken) {
