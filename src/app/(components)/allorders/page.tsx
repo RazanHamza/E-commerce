@@ -64,8 +64,6 @@ export default function OrdersPage() {
   }, [session, status]);
 
   if (loading) return <p className="text-center my-10">Loading orders...</p>;
-  if (!orders.length) return <p className="text-center my-10">No orders found.</p>;
-
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">My Orders</h1>
@@ -79,8 +77,6 @@ export default function OrdersPage() {
               <strong>Payment:</strong> {order.paymentMethodType}
             </p>
       
-          
-
             <h3 className="mt-3 font-semibold">Items:</h3>
             <ul className="space-y-2">
               {order.cartItems.map((item) => (
