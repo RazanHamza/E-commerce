@@ -1,21 +1,21 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+import { NextConfig } from "next";
+import { tr } from "zod/v4/locales";
+const nextConfig:NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "ecommerce.routemisr.com",
-        pathname: "/Route-Academy-/*",
+        protocol: 'https',
+        hostname: 'ecommerce.routemisr.com',
+        pathname: '/**', 
       },
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true,
+  typescript:{
+    ignoreBuildErrors:true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  eslint:{
+    ignoreDuringBuilds:true,
   },
 };
 
-export default nextConfig
+export default nextConfig;
